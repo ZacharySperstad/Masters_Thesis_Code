@@ -823,3 +823,9 @@ write.tree(L279_rooted,"RAxML_L279_rooted.tre")
 write.tree(L280_rooted,"RAxML_L280_rooted.tre")
 write.tree(L281_rooted,"RAxML_L281_rooted.tre")
 write.tree(L282_rooted,"RAxML_L282_rooted.tre")
+
+L88_tree<-read.tree("RAxML_L88_rooted.tre") #Imports gene tree L88
+plot(L88_tree) #Plots gene tree L88
+L88_tree<-drop.tip(L88_tree,"Danio_rerio") #Removes Danio rerio from L88
+plot(L88_tree) #Plots L88 again without Danio rerio
+write.tree(L88_tree,"RAxML_L88_rooted.tre") #Writes new gene tree without Danio rerio
