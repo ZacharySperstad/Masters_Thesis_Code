@@ -1,24 +1,17 @@
+setwd("C:/Users/spers003/Desktop/calcD/Catostomid_FASTA_Unphased")
 require(evobiR)
 require(ape)
 require(phytools)
 require(seqinr)
-#setwd(paste0("T239_L",i))
 
-setwd("C:/Users/spers003/Desktop/calcD/Catostomid_FASTA_Unphased")
-Locus<-read.fasta("T239_L1.fasta")
-files<-list.files()
+for (i in 1:282) {
+  dir.create(paste0("T239_L",i)) # Creates folders that increase in sequential order.
+  newdir<-paste0("T239_L",i) # Trying to set target directory using loop number.
+}
 
-rm(Locus)
+Locus<-read.fasta("T239_L1.fasta") # Reads in sequence files
 
-for (i in 1:length(files)) {
-  dir.create(paste0("T239_L",i))
-  cwd<-getwd()
-  newdir<-paste0("T239_L",i)
-  file.copy(from=files,to=newdir)
-  setwd(newdir)
-lapply(files,function(x) {
-  Locus<-read.fasta(x)
-  Carpiodes_carpio<-Locus$Carpiodes_carpio
+{Carpiodes_carpio<-Locus$Carpiodes_carpio #Removes one line of sequence file for each of the taxa (their own sequence).
   Carpiodes_cyprinus<-Locus$Carpiodes_cyprinus
   Carpiodes_velifer<-Locus$Carpiodes_velifer
   Catostomus_ardens<-Locus$Catostomus_ardens            
@@ -72,7 +65,7 @@ lapply(files,function(x) {
   Pseudorasbora_parva<-Locus$Pseudorasbora_parva        
   Danio_rerio<-Locus$Danio_rerio
   Cyprinion_semiplotum<-Locus$Cyprinion_semiplotum
-  DStat_1<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_carpio,Cyprinus_carpio)
+  DStat_1<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_carpio,Cyprinus_carpio) #Combines 4 sequences for different taxa.
   DStat_2<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_cyprinus,Cyprinus_carpio)
   DStat_3<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_velifer,Cyprinus_carpio)
   DStat_4<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_ardens,Cyprinus_carpio)
@@ -126,7 +119,7 @@ lapply(files,function(x) {
   DStat_52<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Pseudogastromyzon_myersi,Cyprinus_carpio)
   DStat_53<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Pseudorasbora_parva,Cyprinus_carpio)
   DStat_54<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Danio_rerio,Cyprinus_carpio)
-  ape::write.dna(DStat_1,"L1_1.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_1,"L1_1.fasta",format="fasta",nbcol=1,colsep="",colw=1000000) # Exports 4-sequence file.
   ape::write.dna(DStat_2,"L1_2.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
   ape::write.dna(DStat_3,"L1_3.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
   ape::write.dna(DStat_4,"L1_4.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
@@ -180,34 +173,380 @@ lapply(files,function(x) {
   ape::write.dna(DStat_52,"L1_52.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
   ape::write.dna(DStat_53,"L1_53.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
   ape::write.dna(DStat_54,"L1_54.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
-  new.files<-list.files(pattern="^L1_")
-  cwd<-getwd()
-  newdir<-paste0("T239_L",i)
-  file.copy(new.files,newdir)
-})
-setwd(cwd)
 }
 
-  
-  
- 
+##################################################################################################################
+###                                             Locus 2                                                        ###
+##################################################################################################################
+
+
+{Locus<-read.fasta("T239_L2.fasta") # Reads in sequence files
+    Carpiodes_carpio<-Locus$Carpiodes_carpio #Removes one line of sequence file for each of the taxa (their own sequence).
+    Carpiodes_cyprinus<-Locus$Carpiodes_cyprinus
+    Carpiodes_velifer<-Locus$Carpiodes_velifer
+    Catostomus_ardens<-Locus$Catostomus_ardens            
+    Catostomus_catostomus<-Locus$Catostomus_catostomus        
+    Catostomus_clarkii<-Locus$Catostomus_clarkii           
+    Catostomus_columbianus<-Locus$Catostomus_columbianus       
+    Catostomus_commersonii<-Locus$Catostomus_commersonii       
+    Catostomus_discobolus<-Locus$Catostomus_discobolus
+    Catostomus_insignis<-Locus$Catostomus_insignis
+    Catostomus_latipinnis<-Locus$Catostomus_latipinnis
+    Catostomus_occidentalis<-Locus$Catostomus_occidentalis
+    Chasmistes_liorus<-Locus$Chasmistes_liorus
+    Cycleptus_elongatus<-Locus$Cycleptus_elongatus
+    Deltistes_luxatus<-Locus$Deltistes_luxatus
+    Hypentelium_etowanum<-Locus$Hypentelium_etowanum
+    Hypentelium_nigricans<-Locus$Hypentelium_nigricans
+    Hypentelium_roanokense<-Locus$Hypentelium_roanokense
+    Ictiobus_bubalus<-Locus$Ictiobus_bubalus
+    Ictiobus_cyprinellus<-Locus$Ictiobus_cyprinellus
+    Moxostoma_anisurum<-Locus$Moxostoma_anisurum
+    Moxostoma_arriommum<-Locus$Moxostoma_arriommum
+    Moxostoma_cervinum<-Locus$Moxostoma_cervinum
+    Moxostoma_duquesnei<-Locus$Moxostoma_duquesnei
+    Moxostoma_erythrurum<-Locus$Moxostoma_erythrurum
+    Moxostoma_lachneri<-Locus$Moxostoma_lachneri
+    Moxostoma_poecilurum<-Locus$Moxostoma_poecilurum
+    Moxostoma_rupiscartes<-Locus$Moxostoma_rupiscartes
+    Moxostoma_valenciennsi<-Locus$Moxostoma_valenciennsi
+    Myxocyprinus_asiaticus<-Locus$Myxocyprinus_asiaticus
+    Xyrauchen_texanus<-Locus$Xyrauchen_texanus
+    Catostomus_macrocheilus<-Locus$Catostomus_macrocheilus
+    Catostomus_platyrhynchus<-Locus$Catostomus_platyrhynchus
+    Catostomus_plebius<-Locus$Catostomus_plebius
+    Catostomus_cahita<-Locus$Catostomus_cahita
+    Catostomus_bernardini<-Locus$Catostomus_bernardini
+    Erimyzon_oblongus<-Locus$Erimyzon_oblongus
+    Thoburnia_atripinnis<-Locus$Thoburnia_atripinnis
+    Thoburnia_rhothoeca<-Locus$Thoburnia_rhothoeca
+    Minytrema_melanops<-Locus$Minytrema_melanops
+    Ictiobus_niger<-Locus$Ictiobus_niger
+    Catostomus_wigginsi<-Locus$Catostomus_wigginsi
+    Catostomus_leopoldi<-Locus$Catostomus_leopoldi
+    Gyrinocheilus_aymonieri<-Locus$Gyrinocheilus_aymonieri     
+    Homaloptera_ogilvei<-Locus$Homaloptera_ogilvei         
+    Sinibotia_robusta<-Locus$Sinibotia_robusta           
+    Lepidocephalichthys_hasselti<-Locus$Lepidocephalichthys_hasselti
+    Cyprinus_carpio<-Locus$Cyprinus_carpio            
+    Barbus_barbus<-Locus$Barbus_barbus             
+    Vaillantella_maassi<-Locus$Vaillantella_maassi         
+    Pseudogastromyzon_myersi<-Locus$Pseudogastromyzon_myersi    
+    Pseudorasbora_parva<-Locus$Pseudorasbora_parva        
+    Danio_rerio<-Locus$Danio_rerio
+    Cyprinion_semiplotum<-Locus$Cyprinion_semiplotum
+    DStat_1<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_carpio,Cyprinus_carpio) #Combines 4 sequences for different taxa.
+    DStat_2<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_cyprinus,Cyprinus_carpio)
+    DStat_3<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_velifer,Cyprinus_carpio)
+    DStat_4<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_ardens,Cyprinus_carpio)
+    DStat_5<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_catostomus,Cyprinus_carpio)
+    DStat_6<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_clarkii,Cyprinus_carpio)
+    DStat_7<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_columbianus,Cyprinus_carpio)
+    DStat_8<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_commersonii,Cyprinus_carpio)
+    DStat_9<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_discobolus,Cyprinus_carpio)
+    DStat_10<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_insignis,Cyprinus_carpio)
+    DStat_11<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_latipinnis,Cyprinus_carpio)
+    DStat_12<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_occidentalis,Cyprinus_carpio)
+    DStat_13<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Chasmistes_liorus,Cyprinus_carpio)
+    DStat_14<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Cycleptus_elongatus,Cyprinus_carpio)
+    DStat_15<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Deltistes_luxatus,Cyprinus_carpio)
+    DStat_16<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Hypentelium_etowanum,Cyprinus_carpio)
+    DStat_17<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Hypentelium_nigricans,Cyprinus_carpio)
+    DStat_18<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Hypentelium_roanokense,Cyprinus_carpio)
+    DStat_19<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Ictiobus_bubalus,Cyprinus_carpio)
+    DStat_20<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Ictiobus_cyprinellus,Cyprinus_carpio)
+    DStat_21<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_anisurum,Cyprinus_carpio)
+    DStat_22<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_arriommum,Cyprinus_carpio)
+    DStat_23<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_cervinum,Cyprinus_carpio)
+    DStat_24<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_duquesnei,Cyprinus_carpio)
+    DStat_25<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_erythrurum,Cyprinus_carpio)
+    DStat_26<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_lachneri,Cyprinus_carpio)
+    DStat_27<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_poecilurum,Cyprinus_carpio)
+    DStat_28<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_rupiscartes,Cyprinus_carpio)
+    DStat_29<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_valenciennsi,Cyprinus_carpio)
+    DStat_30<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Myxocyprinus_asiaticus,Cyprinus_carpio)
+    DStat_31<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Xyrauchen_texanus,Cyprinus_carpio)
+    DStat_32<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_macrocheilus,Cyprinus_carpio)
+    DStat_33<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_platyrhynchus,Cyprinus_carpio)
+    DStat_34<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_plebius,Cyprinus_carpio)
+    DStat_35<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_cahita,Cyprinus_carpio)
+    DStat_36<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_bernardini,Cyprinus_carpio)
+    DStat_37<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Cyprinion_semiplotum,Cyprinus_carpio)
+    DStat_38<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Erimyzon_oblongus,Cyprinus_carpio)
+    DStat_39<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Thoburnia_atripinnis,Cyprinus_carpio)
+    DStat_40<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Thoburnia_rhothoeca,Cyprinus_carpio)
+    DStat_41<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Minytrema_melanops,Cyprinus_carpio)
+    DStat_42<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Ictiobus_niger,Cyprinus_carpio)
+    DStat_43<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_wigginsi,Cyprinus_carpio)
+    DStat_44<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_leopoldi,Cyprinus_carpio)
+    DStat_45<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Gyrinocheilus_aymonieri,Cyprinus_carpio)
+    DStat_46<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Homaloptera_ogilvei,Cyprinus_carpio)
+    DStat_47<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Sinibotia_robusta,Cyprinus_carpio)
+    DStat_48<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Lepidocephalichthys_hasselti,Cyprinus_carpio)
+    DStat_49<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Cyprinus_carpio,Cyprinus_carpio)
+    DStat_50<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Barbus_barbus,Cyprinus_carpio)
+    DStat_51<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Vaillantella_maassi,Cyprinus_carpio)
+    DStat_52<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Pseudogastromyzon_myersi,Cyprinus_carpio)
+    DStat_53<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Pseudorasbora_parva,Cyprinus_carpio)
+    DStat_54<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Danio_rerio,Cyprinus_carpio)
+  ape::write.dna(DStat_1,"L2_1.fasta",format="fasta",nbcol=1,colsep="",colw=1000000) # Exports 4-sequence file.
+  ape::write.dna(DStat_2,"L2_2.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_3,"L2_3.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_4,"L2_4.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_5,"L2_5.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_6,"L2_6.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_7,"L2_7.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_8,"L2_8.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_9,"L2_9.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_10,"L2_10.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_11,"L2_11.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_12,"L2_12.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_13,"L2_13.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_14,"L2_14.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_15,"L2_15.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_16,"L2_16.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_17,"L2_17.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_18,"L2_18.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_19,"L2_19.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_20,"L2_20.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_21,"L2_21.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_22,"L2_22.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_23,"L2_23.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_24,"L2_24.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_25,"L2_25.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_26,"L2_26.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_27,"L2_27.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_28,"L2_28.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_29,"L2_29.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_30,"L2_30.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_31,"L2_31.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_32,"L2_32.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_33,"L2_33.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_34,"L2_34.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_35,"L2_35.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_36,"L2_36.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_37,"L2_37.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_38,"L2_38.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_39,"L2_39.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_40,"L2_40.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_41,"L2_41.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_42,"L2_42.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_43,"L2_43.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_44,"L2_44.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_45,"L2_45.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_46,"L2_46.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_47,"L2_47.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_48,"L2_48.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_49,"L2_49.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_50,"L2_50.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_51,"L2_51.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_52,"L2_52.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_53,"L2_53.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+  ape::write.dna(DStat_54,"L2_54.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)}
+
+
+####################################################################################################################
+###                                           Locus 4                                                            ###
+####################################################################################################################
+
+
+{Locus<-read.fasta("T239_L4.fasta") # Reads in sequence files
+Carpiodes_carpio<-Locus$Carpiodes_carpio #Removes one line of sequence file for each of the taxa (their own sequence).
+Carpiodes_cyprinus<-Locus$Carpiodes_cyprinus
+Carpiodes_velifer<-Locus$Carpiodes_velifer
+Catostomus_ardens<-Locus$Catostomus_ardens            
+Catostomus_catostomus<-Locus$Catostomus_catostomus        
+Catostomus_clarkii<-Locus$Catostomus_clarkii           
+Catostomus_columbianus<-Locus$Catostomus_columbianus       
+Catostomus_commersonii<-Locus$Catostomus_commersonii       
+Catostomus_discobolus<-Locus$Catostomus_discobolus
+Catostomus_insignis<-Locus$Catostomus_insignis
+Catostomus_latipinnis<-Locus$Catostomus_latipinnis
+Catostomus_occidentalis<-Locus$Catostomus_occidentalis
+Chasmistes_liorus<-Locus$Chasmistes_liorus
+Cycleptus_elongatus<-Locus$Cycleptus_elongatus
+Deltistes_luxatus<-Locus$Deltistes_luxatus
+Hypentelium_etowanum<-Locus$Hypentelium_etowanum
+Hypentelium_nigricans<-Locus$Hypentelium_nigricans
+Hypentelium_roanokense<-Locus$Hypentelium_roanokense
+Ictiobus_bubalus<-Locus$Ictiobus_bubalus
+Ictiobus_cyprinellus<-Locus$Ictiobus_cyprinellus
+Moxostoma_anisurum<-Locus$Moxostoma_anisurum
+Moxostoma_arriommum<-Locus$Moxostoma_arriommum
+Moxostoma_cervinum<-Locus$Moxostoma_cervinum
+Moxostoma_duquesnei<-Locus$Moxostoma_duquesnei
+Moxostoma_erythrurum<-Locus$Moxostoma_erythrurum
+Moxostoma_lachneri<-Locus$Moxostoma_lachneri
+Moxostoma_poecilurum<-Locus$Moxostoma_poecilurum
+Moxostoma_rupiscartes<-Locus$Moxostoma_rupiscartes
+Moxostoma_valenciennsi<-Locus$Moxostoma_valenciennsi
+Myxocyprinus_asiaticus<-Locus$Myxocyprinus_asiaticus
+Xyrauchen_texanus<-Locus$Xyrauchen_texanus
+Catostomus_macrocheilus<-Locus$Catostomus_macrocheilus
+Catostomus_platyrhynchus<-Locus$Catostomus_platyrhynchus
+Catostomus_plebius<-Locus$Catostomus_plebius
+Catostomus_cahita<-Locus$Catostomus_cahita
+Catostomus_bernardini<-Locus$Catostomus_bernardini
+Erimyzon_oblongus<-Locus$Erimyzon_oblongus
+Thoburnia_atripinnis<-Locus$Thoburnia_atripinnis
+Thoburnia_rhothoeca<-Locus$Thoburnia_rhothoeca
+Minytrema_melanops<-Locus$Minytrema_melanops
+Ictiobus_niger<-Locus$Ictiobus_niger
+Catostomus_wigginsi<-Locus$Catostomus_wigginsi
+Catostomus_leopoldi<-Locus$Catostomus_leopoldi
+Gyrinocheilus_aymonieri<-Locus$Gyrinocheilus_aymonieri     
+Homaloptera_ogilvei<-Locus$Homaloptera_ogilvei         
+Sinibotia_robusta<-Locus$Sinibotia_robusta           
+Lepidocephalichthys_hasselti<-Locus$Lepidocephalichthys_hasselti
+Cyprinus_carpio<-Locus$Cyprinus_carpio            
+Barbus_barbus<-Locus$Barbus_barbus             
+Vaillantella_maassi<-Locus$Vaillantella_maassi         
+Pseudogastromyzon_myersi<-Locus$Pseudogastromyzon_myersi    
+Pseudorasbora_parva<-Locus$Pseudorasbora_parva        
+Danio_rerio<-Locus$Danio_rerio
+Cyprinion_semiplotum<-Locus$Cyprinion_semiplotum
+DStat_1<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_carpio,Cyprinus_carpio) #Combines 4 sequences for different taxa.
+DStat_2<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_cyprinus,Cyprinus_carpio)
+DStat_3<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Carpiodes_velifer,Cyprinus_carpio)
+DStat_4<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_ardens,Cyprinus_carpio)
+DStat_5<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_catostomus,Cyprinus_carpio)
+DStat_6<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_clarkii,Cyprinus_carpio)
+DStat_7<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_columbianus,Cyprinus_carpio)
+DStat_8<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_commersonii,Cyprinus_carpio)
+DStat_9<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_discobolus,Cyprinus_carpio)
+DStat_10<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_insignis,Cyprinus_carpio)
+DStat_11<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_latipinnis,Cyprinus_carpio)
+DStat_12<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_occidentalis,Cyprinus_carpio)
+DStat_13<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Chasmistes_liorus,Cyprinus_carpio)
+DStat_14<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Cycleptus_elongatus,Cyprinus_carpio)
+DStat_15<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Deltistes_luxatus,Cyprinus_carpio)
+DStat_16<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Hypentelium_etowanum,Cyprinus_carpio)
+DStat_17<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Hypentelium_nigricans,Cyprinus_carpio)
+DStat_18<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Hypentelium_roanokense,Cyprinus_carpio)
+DStat_19<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Ictiobus_bubalus,Cyprinus_carpio)
+DStat_20<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Ictiobus_cyprinellus,Cyprinus_carpio)
+DStat_21<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_anisurum,Cyprinus_carpio)
+DStat_22<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_arriommum,Cyprinus_carpio)
+DStat_23<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_cervinum,Cyprinus_carpio)
+DStat_24<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_duquesnei,Cyprinus_carpio)
+DStat_25<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_erythrurum,Cyprinus_carpio)
+DStat_26<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_lachneri,Cyprinus_carpio)
+DStat_27<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_poecilurum,Cyprinus_carpio)
+DStat_28<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_rupiscartes,Cyprinus_carpio)
+DStat_29<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Moxostoma_valenciennsi,Cyprinus_carpio)
+DStat_30<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Myxocyprinus_asiaticus,Cyprinus_carpio)
+DStat_31<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Xyrauchen_texanus,Cyprinus_carpio)
+DStat_32<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_macrocheilus,Cyprinus_carpio)
+DStat_33<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_platyrhynchus,Cyprinus_carpio)
+DStat_34<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_plebius,Cyprinus_carpio)
+DStat_35<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_cahita,Cyprinus_carpio)
+DStat_36<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_bernardini,Cyprinus_carpio)
+DStat_37<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Cyprinion_semiplotum,Cyprinus_carpio)
+DStat_38<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Erimyzon_oblongus,Cyprinus_carpio)
+DStat_39<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Thoburnia_atripinnis,Cyprinus_carpio)
+DStat_40<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Thoburnia_rhothoeca,Cyprinus_carpio)
+DStat_41<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Minytrema_melanops,Cyprinus_carpio)
+DStat_42<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Ictiobus_niger,Cyprinus_carpio)
+DStat_43<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_wigginsi,Cyprinus_carpio)
+DStat_44<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Catostomus_leopoldi,Cyprinus_carpio)
+DStat_45<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Gyrinocheilus_aymonieri,Cyprinus_carpio)
+DStat_46<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Homaloptera_ogilvei,Cyprinus_carpio)
+DStat_47<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Sinibotia_robusta,Cyprinus_carpio)
+DStat_48<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Lepidocephalichthys_hasselti,Cyprinus_carpio)
+DStat_49<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Cyprinus_carpio,Cyprinus_carpio)
+DStat_50<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Barbus_barbus,Cyprinus_carpio)
+DStat_51<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Vaillantella_maassi,Cyprinus_carpio)
+DStat_52<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Pseudogastromyzon_myersi,Cyprinus_carpio)
+DStat_53<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Pseudorasbora_parva,Cyprinus_carpio)
+DStat_54<-rbind(Myxocyprinus_asiaticus,Cycleptus_elongatus,Danio_rerio,Cyprinus_carpio)
+ape::write.dna(DStat_1,"L4_1.fasta",format="fasta",nbcol=1,colsep="",colw=1000000) # Exports 4-sequence file.
+ape::write.dna(DStat_2,"L4_2.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_3,"L4_3.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_4,"L4_4.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_5,"L4_5.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_6,"L4_6.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_7,"L4_7.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_8,"L4_8.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_9,"L4_9.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_10,"L4_10.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_11,"L4_11.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_12,"L4_12.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_13,"L4_13.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_14,"L4_14.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_15,"L4_15.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_16,"L4_16.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_17,"L4_17.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_18,"L4_18.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_19,"L4_19.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_20,"L4_20.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_21,"L4_21.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_22,"L4_22.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_23,"L4_23.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_24,"L4_24.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_25,"L4_25.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_26,"L4_26.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_27,"L4_27.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_28,"L4_28.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_29,"L4_29.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_30,"L4_30.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_31,"L4_31.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_32,"L4_32.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_33,"L4_33.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_34,"L4_34.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_35,"L4_35.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_36,"L4_36.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_37,"L4_37.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_38,"L4_38.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_39,"L4_39.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_40,"L4_40.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_41,"L4_41.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_42,"L4_42.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_43,"L4_43.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_44,"L4_44.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_45,"L4_45.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_46,"L4_46.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_47,"L4_47.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_48,"L4_48.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_49,"L4_49.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_50,"L4_50.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_51,"L4_51.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_52,"L4_52.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_53,"L4_53.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
+ape::write.dna(DStat_54,"L4_54.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)}
+
+#################################################################################################################
+###                                       Locus 5                                                             ###
+#################################################################################################################
 
 
 
 
-# newdir<-paste0("T239_L",i)
-  #dir.create(newdir)
-  #cwd<-getwd()
-  #setwd(newdir)
-  #Loci<-raster(paste0("R://moist_tif/ind_moist",i,".tif"))  
-  #writeRaster(Loci,"moist.tif") 
-  #setwd(cwd)
-#})
-  
+#################################################################################################################
+###                                       Locus 6                                                             ###
+#################################################################################################################
 
-??raster
-  
-  
+
+
+
+#################################################################################################################
+###                                       Locus 7                                                             ###
+#################################################################################################################
+
+
+
+
+#################################################################################################################
+###                                       Locus 8                                                             ###
+#################################################################################################################
+
+
+
+
+
+
+
+
+# VVVVVVVVVVVVVVVVVVVVVVVVVVVV Old Code VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV#
 
 
 #Extracts specified rows of sequence data.
@@ -382,53 +721,6 @@ setwd(cwd)
   ape::write.dna(DStat_52,"L1_52.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
   ape::write.dna(DStat_53,"L1_53.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)
   ape::write.dna(DStat_54,"L1_54.fasta",format="fasta",nbcol=1,colsep="",colw=1000000)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ################################################################################################################
