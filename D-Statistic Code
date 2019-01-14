@@ -1,0 +1,35 @@
+require(evobiR)
+install.packages("tidyr")
+require(tidyr)
+
+capture.output(
+  {CalcD("T239_L1.fasta",sig.test='B',replicate=10)
+  CalcD("T239_L10.fasta",sig.test='B',replicate=10)
+  CalcD("T239_L100.fasta",sig.test='B',replicate=10)},file='results.csv')
+# Calculate D-statistic for one locus and export results.
+
+results<-read.csv('results.csv',header=F,sep="=") # Seperate values from text.
+separate(results,column,into=”“,sep=”/”) #Seperate again.
+
+data_frame<-data.frame(matrix(ncol=11,nrow=54)) #Create a table with info.
+col.names<-c("P1","P2","P3","O","Sites in Alignment","# Sites ABBA","# Sites BABA","Raw D-Stat",
+             "Z-Score","SD D-Stat","P-Val") # Makes vector of column names.
+colnames(data_frame)<-col.names #Assigns column names to table.
+
+Site_seq<-seq(2,27,9) 
+SiteVal<-results[Site_seq,2] # Removes site # values from results matrix.
+
+PVal_seq<-seq(9,27,9)
+PVal<-results[PVal_seq,1]
+
+data_frame$P1<-taxa
+data_frame$P2<-taxa
+data_frame$P3<-taxa
+data_frame$O<-taxa
+data_frame$`Sites in Alignment`<-SiteVal
+data_frame$`Raw D-Stat`<-
+data_frame$`Z-Score`<-
+data_frame$`SD D-Stat`<-
+data_frame$`P-Val`<-PVal
+data_frame$`# Sites ABBA`<-
+data_frame$`# Sites BABA`<-BABA.patterns
