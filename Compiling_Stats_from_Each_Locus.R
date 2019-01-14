@@ -1,0 +1,809 @@
+cwd<-getwd()
+cwd
+setwd(("C:/Users/spers003/Desktop/calcD"))
+require(geomorph)
+
+{L1_Data.Frame<-read.csv('L1_Data.csv')		#Reads in data .csv files
+L2_Data.Frame<-read.csv('L2_Data.csv')
+L3_Data.Frame<-read.csv('L3_Data.csv')  
+L4_Data.Frame<-read.csv('L4_Data.csv')
+L5_Data.Frame<-read.csv('L5_Data.csv')
+L6_Data.Frame<-read.csv('L6_Data.csv')
+L7_Data.Frame<-read.csv('L7_Data.csv')
+L8_Data.Frame<-read.csv('L8_Data.csv')
+L9_Data.Frame<-read.csv('L9_Data.csv')
+L10_Data.Frame<-read.csv('L10_Data.csv')
+L11_Data.Frame<-read.csv('L11_Data.csv')
+L12_Data.Frame<-read.csv('L12_Data.csv')
+L13_Data.Frame<-read.csv('L13_Data.csv')
+L14_Data.Frame<-read.csv('L14_Data.csv')
+L15_Data.Frame<-read.csv('L15_Data.csv')
+L16_Data.Frame<-read.csv('L16_Data.csv')
+L17_Data.Frame<-read.csv('L17_Data.csv')
+L18_Data.Frame<-read.csv('L18_Data.csv')
+L19_Data.Frame<-read.csv('L19_Data.csv')
+L20_Data.Frame<-read.csv('L20_Data.csv')
+L21_Data.Frame<-read.csv('L21_Data.csv')
+L22_Data.Frame<-read.csv('L22_Data.csv')
+L23_Data.Frame<-read.csv('L23_Data.csv')
+L24_Data.Frame<-read.csv('L24_Data.csv')
+L25_Data.Frame<-read.csv('L25_Data.csv')
+L26_Data.Frame<-read.csv('L26_Data.csv')
+L27_Data.Frame<-read.csv('L27_Data.csv')
+L28_Data.Frame<-read.csv('L28_Data.csv')
+L29_Data.Frame<-read.csv('L29_Data.csv')
+L30_Data.Frame<-read.csv('L30_Data.csv')
+L31_Data.Frame<-read.csv('L31_Data.csv')
+L32_Data.Frame<-read.csv('L32_Data.csv')
+L33_Data.Frame<-read.csv('L33_Data.csv')
+L34_Data.Frame<-read.csv('L34_Data.csv')
+L35_Data.Frame<-read.csv('L35_Data.csv')
+L36_Data.Frame<-read.csv('L36_Data.csv')
+L37_Data.Frame<-read.csv('L37_Data.csv')
+L38_Data.Frame<-read.csv('L38_Data.csv')
+L39_Data.Frame<-read.csv('L39_Data.csv')
+L40_Data.Frame<-read.csv('L40_Data.csv')
+L41_Data.Frame<-read.csv('L41_Data.csv')
+L42_Data.Frame<-read.csv('L42_Data.csv')
+L43_Data.Frame<-read.csv('L43_Data.csv')
+L44_Data.Frame<-read.csv('L44_Data.csv')
+L45_Data.Frame<-read.csv('L45_Data.csv')
+L46_Data.Frame<-read.csv('L46_Data.csv')
+L47_Data.Frame<-read.csv('L47_Data.csv')
+L48_Data.Frame<-read.csv('L48_Data.csv')
+L49_Data.Frame<-read.csv('L49_Data.csv')
+L50_Data.Frame<-read.csv('L50_Data.csv')
+L51_Data.Frame<-read.csv('L51_Data.csv')
+L52_Data.Frame<-read.csv('L52_Data.csv')
+L53_Data.Frame<-read.csv('L53_Data.csv')
+L54_Data.Frame<-read.csv('L54_Data.csv')
+L55_Data.Frame<-read.csv('L55_Data.csv')
+L56_Data.Frame<-read.csv('L56_Data.csv')
+L57_Data.Frame<-read.csv('L57_Data.csv')
+L58_Data.Frame<-read.csv('L58_Data.csv')
+L59_Data.Frame<-read.csv('L59_Data.csv')
+L60_Data.Frame<-read.csv('L60_Data.csv')
+L61_Data.Frame<-read.csv('L61_Data.csv')
+L62_Data.Frame<-read.csv('L62_Data.csv')
+L63_Data.Frame<-read.csv('L63_Data.csv')
+L64_Data.Frame<-read.csv('L64_Data.csv')
+L65_Data.Frame<-read.csv('L65_Data.csv')
+L66_Data.Frame<-read.csv('L66_Data.csv')
+L67_Data.Frame<-read.csv('L67_Data.csv')
+L68_Data.Frame<-read.csv('L68_Data.csv')
+L69_Data.Frame<-read.csv('L69_Data.csv')
+L70_Data.Frame<-read.csv('L70_Data.csv')
+L71_Data.Frame<-read.csv('L71_Data.csv')
+L72_Data.Frame<-read.csv('L72_Data.csv')
+L73_Data.Frame<-read.csv('L73_Data.csv')
+L74_Data.Frame<-read.csv('L74_Data.csv')
+L75_Data.Frame<-read.csv('L75_Data.csv')
+L76_Data.Frame<-read.csv('L76_Data.csv')
+L77_Data.Frame<-read.csv('L77_Data.csv')
+L78_Data.Frame<-read.csv('L78_Data.csv')
+L79_Data.Frame<-read.csv('L79_Data.csv')
+L80_Data.Frame<-read.csv('L80_Data.csv')
+L81_Data.Frame<-read.csv('L81_Data.csv')
+L82_Data.Frame<-read.csv('L82_Data.csv')
+L83_Data.Frame<-read.csv('L83_Data.csv')
+L84_Data.Frame<-read.csv('L84_Data.csv')
+L85_Data.Frame<-read.csv('L85_Data.csv')
+L86_Data.Frame<-read.csv('L86_Data.csv')
+L87_Data.Frame<-read.csv('L87_Data.csv')
+L88_Data.Frame<-read.csv('L88_Data.csv')
+L89_Data.Frame<-read.csv('L89_Data.csv')
+L90_Data.Frame<-read.csv('L90_Data.csv')
+L91_Data.Frame<-read.csv('L91_Data.csv')
+L92_Data.Frame<-read.csv('L92_Data.csv')
+L93_Data.Frame<-read.csv('L93_Data.csv')
+L94_Data.Frame<-read.csv('L94_Data.csv')
+L95_Data.Frame<-read.csv('L95_Data.csv')
+L96_Data.Frame<-read.csv('L96_Data.csv')
+L97_Data.Frame<-read.csv('L97_Data.csv')
+L98_Data.Frame<-read.csv('L98_Data.csv')
+L99_Data.Frame<-read.csv('L99_Data.csv')
+L100_Data.Frame<-read.csv('L100_Data.csv')
+L101_Data.Frame<-read.csv('L101_Data.csv')
+L102_Data.Frame<-read.csv('L102_Data.csv')
+L103_Data.Frame<-read.csv('L103_Data.csv')
+L104_Data.Frame<-read.csv('L104_Data.csv')
+L105_Data.Frame<-read.csv('L105_Data.csv')
+L106_Data.Frame<-read.csv('L106_Data.csv')
+L107_Data.Frame<-read.csv('L107_Data.csv')
+L108_Data.Frame<-read.csv('L108_Data.csv')
+L109_Data.Frame<-read.csv('L109_Data.csv')
+L110_Data.Frame<-read.csv('L110_Data.csv')
+L111_Data.Frame<-read.csv('L111_Data.csv')
+L112_Data.Frame<-read.csv('L112_Data.csv')
+L113_Data.Frame<-read.csv('L113_Data.csv')
+L114_Data.Frame<-read.csv('L114_Data.csv')
+L115_Data.Frame<-read.csv('L115_Data.csv')
+L116_Data.Frame<-read.csv('L116_Data.csv')
+L117_Data.Frame<-read.csv('L117_Data.csv')
+L118_Data.Frame<-read.csv('L118_Data.csv')
+L119_Data.Frame<-read.csv('L119_Data.csv')
+L120_Data.Frame<-read.csv('L120_Data.csv')
+L121_Data.Frame<-read.csv('L121_Data.csv')
+L122_Data.Frame<-read.csv('L122_Data.csv')
+L123_Data.Frame<-read.csv('L123_Data.csv')
+L124_Data.Frame<-read.csv('L124_Data.csv')
+L125_Data.Frame<-read.csv('L125_Data.csv')
+L126_Data.Frame<-read.csv('L126_Data.csv')
+L127_Data.Frame<-read.csv('L127_Data.csv')
+L128_Data.Frame<-read.csv('L128_Data.csv')
+L129_Data.Frame<-read.csv('L129_Data.csv')
+L130_Data.Frame<-read.csv('L130_Data.csv')
+L131_Data.Frame<-read.csv('L131_Data.csv')
+L132_Data.Frame<-read.csv('L132_Data.csv')
+L133_Data.Frame<-read.csv('L133_Data.csv')
+L134_Data.Frame<-read.csv('L134_Data.csv')
+L135_Data.Frame<-read.csv('L135_Data.csv')
+L136_Data.Frame<-read.csv('L136_Data.csv')
+L137_Data.Frame<-read.csv('L137_Data.csv')
+L138_Data.Frame<-read.csv('L138_Data.csv')
+L139_Data.Frame<-read.csv('L139_Data.csv')
+L140_Data.Frame<-read.csv('L140_Data.csv')
+L141_Data.Frame<-read.csv('L141_Data.csv')
+L142_Data.Frame<-read.csv('L142_Data.csv')
+L143_Data.Frame<-read.csv('L143_Data.csv')
+L144_Data.Frame<-read.csv('L144_Data.csv')
+L145_Data.Frame<-read.csv('L145_Data.csv')
+L146_Data.Frame<-read.csv('L146_Data.csv')
+L147_Data.Frame<-read.csv('L147_Data.csv')
+L148_Data.Frame<-read.csv('L148_Data.csv')
+L149_Data.Frame<-read.csv('L149_Data.csv')
+L150_Data.Frame<-read.csv('L150_Data.csv')
+L151_Data.Frame<-read.csv('L151_Data.csv')
+L152_Data.Frame<-read.csv('L152_Data.csv')
+L153_Data.Frame<-read.csv('L153_Data.csv')
+L154_Data.Frame<-read.csv('L154_Data.csv')
+L155_Data.Frame<-read.csv('L155_Data.csv')
+L156_Data.Frame<-read.csv('L156_Data.csv')
+L157_Data.Frame<-read.csv('L157_Data.csv')
+L158_Data.Frame<-read.csv('L158_Data.csv')
+L159_Data.Frame<-read.csv('L159_Data.csv')
+L160_Data.Frame<-read.csv('L160_Data.csv')
+L161_Data.Frame<-read.csv('L161_Data.csv')
+L162_Data.Frame<-read.csv('L162_Data.csv')
+L163_Data.Frame<-read.csv('L163_Data.csv')
+L164_Data.Frame<-read.csv('L164_Data.csv')
+L165_Data.Frame<-read.csv('L165_Data.csv')
+L166_Data.Frame<-read.csv('L166_Data.csv')
+L167_Data.Frame<-read.csv('L167_Data.csv')
+L168_Data.Frame<-read.csv('L168_Data.csv')
+L169_Data.Frame<-read.csv('L169_Data.csv')
+L170_Data.Frame<-read.csv('L170_Data.csv')
+L171_Data.Frame<-read.csv('L171_Data.csv')
+L172_Data.Frame<-read.csv('L172_Data.csv')
+L173_Data.Frame<-read.csv('L173_Data.csv')
+L174_Data.Frame<-read.csv('L174_Data.csv')
+L175_Data.Frame<-read.csv('L175_Data.csv')
+L176_Data.Frame<-read.csv('L176_Data.csv')
+L177_Data.Frame<-read.csv('L177_Data.csv')
+L178_Data.Frame<-read.csv('L178_Data.csv')
+L179_Data.Frame<-read.csv('L179_Data.csv')
+L180_Data.Frame<-read.csv('L180_Data.csv')
+L181_Data.Frame<-read.csv('L181_Data.csv')
+L182_Data.Frame<-read.csv('L182_Data.csv')
+L183_Data.Frame<-read.csv('L183_Data.csv')
+L184_Data.Frame<-read.csv('L184_Data.csv')
+L185_Data.Frame<-read.csv('L185_Data.csv')
+L186_Data.Frame<-read.csv('L186_Data.csv')
+L187_Data.Frame<-read.csv('L187_Data.csv')
+L188_Data.Frame<-read.csv('L188_Data.csv')
+L189_Data.Frame<-read.csv('L189_Data.csv')
+L190_Data.Frame<-read.csv('L190_Data.csv')
+L191_Data.Frame<-read.csv('L191_Data.csv')
+L192_Data.Frame<-read.csv('L192_Data.csv')
+L193_Data.Frame<-read.csv('L193_Data.csv')
+L194_Data.Frame<-read.csv('L194_Data.csv')
+L195_Data.Frame<-read.csv('L195_Data.csv')
+L196_Data.Frame<-read.csv('L196_Data.csv')
+L197_Data.Frame<-read.csv('L197_Data.csv')
+L198_Data.Frame<-read.csv('L198_Data.csv')
+L199_Data.Frame<-read.csv('L199_Data.csv')
+L200_Data.Frame<-read.csv('L200_Data.csv')
+L201_Data.Frame<-read.csv('L201_Data.csv')
+L202_Data.Frame<-read.csv('L202_Data.csv')
+L203_Data.Frame<-read.csv('L203_Data.csv')
+L204_Data.Frame<-read.csv('L204_Data.csv')
+L205_Data.Frame<-read.csv('L205_Data.csv')
+L206_Data.Frame<-read.csv('L206_Data.csv')
+L207_Data.Frame<-read.csv('L207_Data.csv')
+L208_Data.Frame<-read.csv('L208_Data.csv')
+L209_Data.Frame<-read.csv('L209_Data.csv')
+L210_Data.Frame<-read.csv('L210_Data.csv')
+L211_Data.Frame<-read.csv('L211_Data.csv')
+L212_Data.Frame<-read.csv('L212_Data.csv')
+L213_Data.Frame<-read.csv('L213_Data.csv')
+L214_Data.Frame<-read.csv('L214_Data.csv')
+L215_Data.Frame<-read.csv('L215_Data.csv')
+L216_Data.Frame<-read.csv('L216_Data.csv')
+L217_Data.Frame<-read.csv('L217_Data.csv')
+L218_Data.Frame<-read.csv('L218_Data.csv')
+L219_Data.Frame<-read.csv('L219_Data.csv')
+L220_Data.Frame<-read.csv('L220_Data.csv')
+L221_Data.Frame<-read.csv('L221_Data.csv')
+L222_Data.Frame<-read.csv('L222_Data.csv')
+L223_Data.Frame<-read.csv('L223_Data.csv')
+L224_Data.Frame<-read.csv('L224_Data.csv')
+L225_Data.Frame<-read.csv('L225_Data.csv')
+L226_Data.Frame<-read.csv('L226_Data.csv')
+L227_Data.Frame<-read.csv('L227_Data.csv')
+L228_Data.Frame<-read.csv('L228_Data.csv')
+L229_Data.Frame<-read.csv('L229_Data.csv')
+L230_Data.Frame<-read.csv('L230_Data.csv')
+L231_Data.Frame<-read.csv('L231_Data.csv')
+L232_Data.Frame<-read.csv('L232_Data.csv')
+L233_Data.Frame<-read.csv('L233_Data.csv')
+L234_Data.Frame<-read.csv('L234_Data.csv')
+L235_Data.Frame<-read.csv('L235_Data.csv')
+L236_Data.Frame<-read.csv('L236_Data.csv')
+L237_Data.Frame<-read.csv('L237_Data.csv')
+L238_Data.Frame<-read.csv('L238_Data.csv')
+L239_Data.Frame<-read.csv('L239_Data.csv')
+L240_Data.Frame<-read.csv('L240_Data.csv')
+L241_Data.Frame<-read.csv('L241_Data.csv')
+L242_Data.Frame<-read.csv('L242_Data.csv')
+L243_Data.Frame<-read.csv('L243_Data.csv')
+L244_Data.Frame<-read.csv('L244_Data.csv')
+L245_Data.Frame<-read.csv('L245_Data.csv')
+L246_Data.Frame<-read.csv('L246_Data.csv')
+L247_Data.Frame<-read.csv('L247_Data.csv')
+L248_Data.Frame<-read.csv('L248_Data.csv')
+L249_Data.Frame<-read.csv('L249_Data.csv')
+L250_Data.Frame<-read.csv('L250_Data.csv')
+L251_Data.Frame<-read.csv('L251_Data.csv')
+L252_Data.Frame<-read.csv('L252_Data.csv')
+L253_Data.Frame<-read.csv('L253_Data.csv')
+L254_Data.Frame<-read.csv('L254_Data.csv')
+L255_Data.Frame<-read.csv('L255_Data.csv')
+L256_Data.Frame<-read.csv('L256_Data.csv')
+L257_Data.Frame<-read.csv('L257_Data.csv')
+L258_Data.Frame<-read.csv('L258_Data.csv')
+L259_Data.Frame<-read.csv('L259_Data.csv')
+L260_Data.Frame<-read.csv('L260_Data.csv')
+L261_Data.Frame<-read.csv('L261_Data.csv')
+L262_Data.Frame<-read.csv('L262_Data.csv')
+L263_Data.Frame<-read.csv('L263_Data.csv')
+L264_Data.Frame<-read.csv('L264_Data.csv')
+L265_Data.Frame<-read.csv('L265_Data.csv')
+L266_Data.Frame<-read.csv('L266_Data.csv')
+L267_Data.Frame<-read.csv('L267_Data.csv')}
+
+{L1_Data.Frame_Row1<-L1_Data.Frame[1,]           #Extracts the first line from each dataframe.
+  L2_Data.Frame_Row1<-L2_Data.Frame[1,]
+  L3_Data.Frame_Row1<-L3_Data.Frame[1,]
+  L4_Data.Frame_Row1<-L4_Data.Frame[1,]
+  L5_Data.Frame_Row1<-L5_Data.Frame[1,]
+  L6_Data.Frame_Row1<-L6_Data.Frame[1,]
+  L7_Data.Frame_Row1<-L7_Data.Frame[1,]
+  L8_Data.Frame_Row1<-L8_Data.Frame[1,]
+  L9_Data.Frame_Row1<-L9_Data.Frame[1,]
+  L10_Data.Frame_Row1<-L10_Data.Frame[1,]
+  L11_Data.Frame_Row1<-L11_Data.Frame[1,]
+  L12_Data.Frame_Row1<-L12_Data.Frame[1,]
+  L13_Data.Frame_Row1<-L13_Data.Frame[1,]
+  L14_Data.Frame_Row1<-L14_Data.Frame[1,]
+  L15_Data.Frame_Row1<-L15_Data.Frame[1,]
+  L16_Data.Frame_Row1<-L16_Data.Frame[1,]
+  L17_Data.Frame_Row1<-L17_Data.Frame[1,]
+  L18_Data.Frame_Row1<-L18_Data.Frame[1,]
+  L19_Data.Frame_Row1<-L19_Data.Frame[1,]
+  L20_Data.Frame_Row1<-L20_Data.Frame[1,]
+  L21_Data.Frame_Row1<-L21_Data.Frame[1,]
+  L22_Data.Frame_Row1<-L22_Data.Frame[1,]
+  L23_Data.Frame_Row1<-L23_Data.Frame[1,]
+  L24_Data.Frame_Row1<-L24_Data.Frame[1,]
+  L25_Data.Frame_Row1<-L25_Data.Frame[1,]
+  L26_Data.Frame_Row1<-L26_Data.Frame[1,]
+  L27_Data.Frame_Row1<-L27_Data.Frame[1,]
+  L28_Data.Frame_Row1<-L28_Data.Frame[1,]
+  L29_Data.Frame_Row1<-L29_Data.Frame[1,]
+  L30_Data.Frame_Row1<-L30_Data.Frame[1,]
+  L31_Data.Frame_Row1<-L31_Data.Frame[1,]
+  L32_Data.Frame_Row1<-L32_Data.Frame[1,]
+  L33_Data.Frame_Row1<-L33_Data.Frame[1,]
+  L34_Data.Frame_Row1<-L34_Data.Frame[1,]
+  L35_Data.Frame_Row1<-L35_Data.Frame[1,]
+  L36_Data.Frame_Row1<-L36_Data.Frame[1,]
+  L37_Data.Frame_Row1<-L37_Data.Frame[1,]
+  L38_Data.Frame_Row1<-L38_Data.Frame[1,]
+  L39_Data.Frame_Row1<-L39_Data.Frame[1,]
+  L40_Data.Frame_Row1<-L40_Data.Frame[1,]
+  L41_Data.Frame_Row1<-L41_Data.Frame[1,]
+  L42_Data.Frame_Row1<-L42_Data.Frame[1,]
+  L43_Data.Frame_Row1<-L43_Data.Frame[1,]
+  L44_Data.Frame_Row1<-L44_Data.Frame[1,]
+  L45_Data.Frame_Row1<-L45_Data.Frame[1,]
+  L46_Data.Frame_Row1<-L46_Data.Frame[1,]
+  L47_Data.Frame_Row1<-L47_Data.Frame[1,]
+  L48_Data.Frame_Row1<-L48_Data.Frame[1,]
+  L49_Data.Frame_Row1<-L49_Data.Frame[1,]
+  L50_Data.Frame_Row1<-L50_Data.Frame[1,]
+  L51_Data.Frame_Row1<-L51_Data.Frame[1,]
+  L52_Data.Frame_Row1<-L52_Data.Frame[1,]
+  L53_Data.Frame_Row1<-L53_Data.Frame[1,]
+  L54_Data.Frame_Row1<-L54_Data.Frame[1,]
+  L55_Data.Frame_Row1<-L55_Data.Frame[1,]
+  L56_Data.Frame_Row1<-L56_Data.Frame[1,]
+  L57_Data.Frame_Row1<-L57_Data.Frame[1,]
+  L58_Data.Frame_Row1<-L58_Data.Frame[1,]
+  L59_Data.Frame_Row1<-L59_Data.Frame[1,]
+  L60_Data.Frame_Row1<-L60_Data.Frame[1,]
+  L61_Data.Frame_Row1<-L61_Data.Frame[1,]
+  L62_Data.Frame_Row1<-L62_Data.Frame[1,]
+  L63_Data.Frame_Row1<-L63_Data.Frame[1,]
+  L64_Data.Frame_Row1<-L64_Data.Frame[1,]
+  L65_Data.Frame_Row1<-L65_Data.Frame[1,]
+  L66_Data.Frame_Row1<-L66_Data.Frame[1,]
+  L67_Data.Frame_Row1<-L67_Data.Frame[1,]
+  L68_Data.Frame_Row1<-L68_Data.Frame[1,]
+  L69_Data.Frame_Row1<-L69_Data.Frame[1,]
+  L70_Data.Frame_Row1<-L70_Data.Frame[1,]
+  L71_Data.Frame_Row1<-L71_Data.Frame[1,]
+  L72_Data.Frame_Row1<-L72_Data.Frame[1,]
+  L73_Data.Frame_Row1<-L73_Data.Frame[1,]
+  L74_Data.Frame_Row1<-L74_Data.Frame[1,]
+  L75_Data.Frame_Row1<-L75_Data.Frame[1,]
+  L76_Data.Frame_Row1<-L76_Data.Frame[1,]
+  L77_Data.Frame_Row1<-L77_Data.Frame[1,]
+  L78_Data.Frame_Row1<-L78_Data.Frame[1,]
+  L79_Data.Frame_Row1<-L79_Data.Frame[1,]
+  L80_Data.Frame_Row1<-L80_Data.Frame[1,]
+  L81_Data.Frame_Row1<-L81_Data.Frame[1,]
+  L82_Data.Frame_Row1<-L82_Data.Frame[1,]
+  L83_Data.Frame_Row1<-L83_Data.Frame[1,]
+  L84_Data.Frame_Row1<-L84_Data.Frame[1,]
+  L85_Data.Frame_Row1<-L85_Data.Frame[1,]
+  L86_Data.Frame_Row1<-L86_Data.Frame[1,]
+  L87_Data.Frame_Row1<-L87_Data.Frame[1,]
+  L88_Data.Frame_Row1<-L88_Data.Frame[1,]
+  L89_Data.Frame_Row1<-L89_Data.Frame[1,]
+  L90_Data.Frame_Row1<-L90_Data.Frame[1,]
+  L91_Data.Frame_Row1<-L91_Data.Frame[1,]
+  L92_Data.Frame_Row1<-L92_Data.Frame[1,]
+  L93_Data.Frame_Row1<-L93_Data.Frame[1,]
+  L94_Data.Frame_Row1<-L94_Data.Frame[1,]
+  L95_Data.Frame_Row1<-L95_Data.Frame[1,]
+  L96_Data.Frame_Row1<-L96_Data.Frame[1,]
+  L97_Data.Frame_Row1<-L97_Data.Frame[1,]
+  L98_Data.Frame_Row1<-L98_Data.Frame[1,]
+  L99_Data.Frame_Row1<-L99_Data.Frame[1,]
+  L100_Data.Frame_Row1<-L100_Data.Frame[1,]
+  L101_Data.Frame_Row1<-L101_Data.Frame[1,]
+  L102_Data.Frame_Row1<-L102_Data.Frame[1,]
+  L103_Data.Frame_Row1<-L103_Data.Frame[1,]
+  L104_Data.Frame_Row1<-L104_Data.Frame[1,]
+  L105_Data.Frame_Row1<-L105_Data.Frame[1,]
+  L106_Data.Frame_Row1<-L106_Data.Frame[1,]
+  L107_Data.Frame_Row1<-L107_Data.Frame[1,]
+  L108_Data.Frame_Row1<-L108_Data.Frame[1,]
+  L109_Data.Frame_Row1<-L109_Data.Frame[1,]
+  L110_Data.Frame_Row1<-L110_Data.Frame[1,]
+  L111_Data.Frame_Row1<-L111_Data.Frame[1,]
+  L112_Data.Frame_Row1<-L112_Data.Frame[1,]
+  L113_Data.Frame_Row1<-L113_Data.Frame[1,]
+  L114_Data.Frame_Row1<-L114_Data.Frame[1,]
+  L115_Data.Frame_Row1<-L115_Data.Frame[1,]
+  L116_Data.Frame_Row1<-L116_Data.Frame[1,]
+  L117_Data.Frame_Row1<-L117_Data.Frame[1,]
+  L118_Data.Frame_Row1<-L118_Data.Frame[1,]
+  L119_Data.Frame_Row1<-L119_Data.Frame[1,]
+  L120_Data.Frame_Row1<-L120_Data.Frame[1,]
+  L121_Data.Frame_Row1<-L121_Data.Frame[1,]
+  L122_Data.Frame_Row1<-L122_Data.Frame[1,]
+  L123_Data.Frame_Row1<-L123_Data.Frame[1,]
+  L124_Data.Frame_Row1<-L124_Data.Frame[1,]
+  L125_Data.Frame_Row1<-L125_Data.Frame[1,]
+  L126_Data.Frame_Row1<-L126_Data.Frame[1,]
+  L127_Data.Frame_Row1<-L127_Data.Frame[1,]
+  L128_Data.Frame_Row1<-L128_Data.Frame[1,]
+  L129_Data.Frame_Row1<-L129_Data.Frame[1,]
+  L130_Data.Frame_Row1<-L130_Data.Frame[1,]
+  L131_Data.Frame_Row1<-L131_Data.Frame[1,]
+  L132_Data.Frame_Row1<-L132_Data.Frame[1,]
+  L133_Data.Frame_Row1<-L133_Data.Frame[1,]
+  L134_Data.Frame_Row1<-L134_Data.Frame[1,]
+  L135_Data.Frame_Row1<-L135_Data.Frame[1,]
+  L136_Data.Frame_Row1<-L136_Data.Frame[1,]
+  L137_Data.Frame_Row1<-L137_Data.Frame[1,]
+  L138_Data.Frame_Row1<-L138_Data.Frame[1,]
+  L139_Data.Frame_Row1<-L139_Data.Frame[1,]
+  L140_Data.Frame_Row1<-L140_Data.Frame[1,]
+  L141_Data.Frame_Row1<-L141_Data.Frame[1,]
+  L142_Data.Frame_Row1<-L142_Data.Frame[1,]
+  L143_Data.Frame_Row1<-L143_Data.Frame[1,]
+  L144_Data.Frame_Row1<-L144_Data.Frame[1,]
+  L145_Data.Frame_Row1<-L145_Data.Frame[1,]
+  L146_Data.Frame_Row1<-L146_Data.Frame[1,]
+  L147_Data.Frame_Row1<-L147_Data.Frame[1,]
+  L148_Data.Frame_Row1<-L148_Data.Frame[1,]
+  L149_Data.Frame_Row1<-L149_Data.Frame[1,]
+  L150_Data.Frame_Row1<-L150_Data.Frame[1,]
+  L151_Data.Frame_Row1<-L151_Data.Frame[1,]
+  L152_Data.Frame_Row1<-L152_Data.Frame[1,]
+  L153_Data.Frame_Row1<-L153_Data.Frame[1,]
+  L154_Data.Frame_Row1<-L154_Data.Frame[1,]
+  L155_Data.Frame_Row1<-L155_Data.Frame[1,]
+  L156_Data.Frame_Row1<-L156_Data.Frame[1,]
+  L157_Data.Frame_Row1<-L157_Data.Frame[1,]
+  L158_Data.Frame_Row1<-L158_Data.Frame[1,]
+  L159_Data.Frame_Row1<-L159_Data.Frame[1,]
+  L160_Data.Frame_Row1<-L160_Data.Frame[1,]
+  L161_Data.Frame_Row1<-L161_Data.Frame[1,]
+  L162_Data.Frame_Row1<-L162_Data.Frame[1,]
+  L163_Data.Frame_Row1<-L163_Data.Frame[1,]
+  L164_Data.Frame_Row1<-L164_Data.Frame[1,]
+  L165_Data.Frame_Row1<-L165_Data.Frame[1,]
+  L166_Data.Frame_Row1<-L166_Data.Frame[1,]
+  L167_Data.Frame_Row1<-L167_Data.Frame[1,]
+  L168_Data.Frame_Row1<-L168_Data.Frame[1,]
+  L169_Data.Frame_Row1<-L169_Data.Frame[1,]
+  L170_Data.Frame_Row1<-L170_Data.Frame[1,]
+  L171_Data.Frame_Row1<-L171_Data.Frame[1,]
+  L172_Data.Frame_Row1<-L172_Data.Frame[1,]
+  L173_Data.Frame_Row1<-L173_Data.Frame[1,]
+  L174_Data.Frame_Row1<-L174_Data.Frame[1,]
+  L175_Data.Frame_Row1<-L175_Data.Frame[1,]
+  L176_Data.Frame_Row1<-L176_Data.Frame[1,]
+  L177_Data.Frame_Row1<-L177_Data.Frame[1,]
+  L178_Data.Frame_Row1<-L178_Data.Frame[1,]
+  L179_Data.Frame_Row1<-L179_Data.Frame[1,]
+  L180_Data.Frame_Row1<-L180_Data.Frame[1,]
+  L181_Data.Frame_Row1<-L181_Data.Frame[1,]
+  L182_Data.Frame_Row1<-L182_Data.Frame[1,]
+  L183_Data.Frame_Row1<-L183_Data.Frame[1,]
+  L184_Data.Frame_Row1<-L184_Data.Frame[1,]
+  L185_Data.Frame_Row1<-L185_Data.Frame[1,]
+  L186_Data.Frame_Row1<-L186_Data.Frame[1,]
+  L187_Data.Frame_Row1<-L187_Data.Frame[1,]
+  L188_Data.Frame_Row1<-L188_Data.Frame[1,]
+  L189_Data.Frame_Row1<-L189_Data.Frame[1,]
+  L190_Data.Frame_Row1<-L190_Data.Frame[1,]
+  L191_Data.Frame_Row1<-L191_Data.Frame[1,]
+  L192_Data.Frame_Row1<-L192_Data.Frame[1,]
+  L193_Data.Frame_Row1<-L193_Data.Frame[1,]
+  L194_Data.Frame_Row1<-L194_Data.Frame[1,]
+  L195_Data.Frame_Row1<-L195_Data.Frame[1,]
+  L196_Data.Frame_Row1<-L196_Data.Frame[1,]
+  L197_Data.Frame_Row1<-L197_Data.Frame[1,]
+  L198_Data.Frame_Row1<-L198_Data.Frame[1,]
+  L199_Data.Frame_Row1<-L199_Data.Frame[1,]
+  L200_Data.Frame_Row1<-L200_Data.Frame[1,]
+  L201_Data.Frame_Row1<-L201_Data.Frame[1,]
+  L202_Data.Frame_Row1<-L202_Data.Frame[1,]
+  L203_Data.Frame_Row1<-L203_Data.Frame[1,]
+  L204_Data.Frame_Row1<-L204_Data.Frame[1,]
+  L205_Data.Frame_Row1<-L205_Data.Frame[1,]
+  L206_Data.Frame_Row1<-L206_Data.Frame[1,]
+  L207_Data.Frame_Row1<-L207_Data.Frame[1,]
+  L208_Data.Frame_Row1<-L208_Data.Frame[1,]
+  L209_Data.Frame_Row1<-L209_Data.Frame[1,]
+  L210_Data.Frame_Row1<-L210_Data.Frame[1,]
+  L211_Data.Frame_Row1<-L211_Data.Frame[1,]
+  L212_Data.Frame_Row1<-L212_Data.Frame[1,]
+  L213_Data.Frame_Row1<-L213_Data.Frame[1,]
+  L214_Data.Frame_Row1<-L214_Data.Frame[1,]
+  L215_Data.Frame_Row1<-L215_Data.Frame[1,]
+  L216_Data.Frame_Row1<-L216_Data.Frame[1,]
+  L217_Data.Frame_Row1<-L217_Data.Frame[1,]
+  L218_Data.Frame_Row1<-L218_Data.Frame[1,]
+  L219_Data.Frame_Row1<-L219_Data.Frame[1,]
+  L220_Data.Frame_Row1<-L220_Data.Frame[1,]
+  L221_Data.Frame_Row1<-L221_Data.Frame[1,]
+  L222_Data.Frame_Row1<-L222_Data.Frame[1,]
+  L223_Data.Frame_Row1<-L223_Data.Frame[1,]
+  L224_Data.Frame_Row1<-L224_Data.Frame[1,]
+  L225_Data.Frame_Row1<-L225_Data.Frame[1,]
+  L226_Data.Frame_Row1<-L226_Data.Frame[1,]
+  L227_Data.Frame_Row1<-L227_Data.Frame[1,]
+  L228_Data.Frame_Row1<-L228_Data.Frame[1,]
+  L229_Data.Frame_Row1<-L229_Data.Frame[1,]
+  L230_Data.Frame_Row1<-L230_Data.Frame[1,]
+  L231_Data.Frame_Row1<-L231_Data.Frame[1,]
+  L232_Data.Frame_Row1<-L232_Data.Frame[1,]
+  L233_Data.Frame_Row1<-L233_Data.Frame[1,]
+  L234_Data.Frame_Row1<-L234_Data.Frame[1,]
+  L235_Data.Frame_Row1<-L235_Data.Frame[1,]
+  L236_Data.Frame_Row1<-L236_Data.Frame[1,]
+  L237_Data.Frame_Row1<-L237_Data.Frame[1,]
+  L238_Data.Frame_Row1<-L238_Data.Frame[1,]
+  L239_Data.Frame_Row1<-L239_Data.Frame[1,]
+  L240_Data.Frame_Row1<-L240_Data.Frame[1,]
+  L241_Data.Frame_Row1<-L241_Data.Frame[1,]
+  L242_Data.Frame_Row1<-L242_Data.Frame[1,]
+  L243_Data.Frame_Row1<-L243_Data.Frame[1,]
+  L244_Data.Frame_Row1<-L244_Data.Frame[1,]
+  L245_Data.Frame_Row1<-L245_Data.Frame[1,]
+  L246_Data.Frame_Row1<-L246_Data.Frame[1,]
+  L247_Data.Frame_Row1<-L247_Data.Frame[1,]
+  L248_Data.Frame_Row1<-L248_Data.Frame[1,]
+  L249_Data.Frame_Row1<-L249_Data.Frame[1,]
+  L250_Data.Frame_Row1<-L250_Data.Frame[1,]
+  L251_Data.Frame_Row1<-L251_Data.Frame[1,]
+  L252_Data.Frame_Row1<-L252_Data.Frame[1,]
+  L253_Data.Frame_Row1<-L253_Data.Frame[1,]
+  L254_Data.Frame_Row1<-L254_Data.Frame[1,]
+  L255_Data.Frame_Row1<-L255_Data.Frame[1,]
+  L256_Data.Frame_Row1<-L256_Data.Frame[1,]
+  L257_Data.Frame_Row1<-L257_Data.Frame[1,]
+  L258_Data.Frame_Row1<-L258_Data.Frame[1,]
+  L259_Data.Frame_Row1<-L259_Data.Frame[1,]
+  L260_Data.Frame_Row1<-L260_Data.Frame[1,]
+  L261_Data.Frame_Row1<-L261_Data.Frame[1,]
+  L262_Data.Frame_Row1<-L262_Data.Frame[1,]
+  L263_Data.Frame_Row1<-L263_Data.Frame[1,]
+  L264_Data.Frame_Row1<-L264_Data.Frame[1,]
+  L265_Data.Frame_Row1<-L265_Data.Frame[1,]
+  L266_Data.Frame_Row1<-L266_Data.Frame[1,]
+  L267_Data.Frame_Row1<-L267_Data.Frame[1,]
+
+DataFrame_Row1<-rbind(L1_Data.Frame_Row1,
+                      L2_Data.Frame_Row1,
+                      L3_Data.Frame_Row1,
+                      L4_Data.Frame_Row1,
+                      L5_Data.Frame_Row1,
+                      L6_Data.Frame_Row1,
+                      L7_Data.Frame_Row1,
+                      L8_Data.Frame_Row1,
+                      L9_Data.Frame_Row1,
+                      L10_Data.Frame_Row1,
+                      L11_Data.Frame_Row1,
+                      L12_Data.Frame_Row1,
+                      L13_Data.Frame_Row1,
+                      L14_Data.Frame_Row1,
+                      L15_Data.Frame_Row1,
+                      L16_Data.Frame_Row1,
+                      L17_Data.Frame_Row1,
+                      L18_Data.Frame_Row1,
+                      L19_Data.Frame_Row1,
+                      L20_Data.Frame_Row1,
+                      L21_Data.Frame_Row1,
+                      L22_Data.Frame_Row1,
+                      L23_Data.Frame_Row1,
+                      L24_Data.Frame_Row1,
+                      L25_Data.Frame_Row1,
+                      L26_Data.Frame_Row1,
+                      L27_Data.Frame_Row1,
+                      L28_Data.Frame_Row1,
+                      L29_Data.Frame_Row1,
+                      L30_Data.Frame_Row1,
+                      L31_Data.Frame_Row1,
+                      L32_Data.Frame_Row1,
+                      L33_Data.Frame_Row1,
+                      L34_Data.Frame_Row1,
+                      L35_Data.Frame_Row1,
+                      L36_Data.Frame_Row1,
+                      L37_Data.Frame_Row1,
+                      L38_Data.Frame_Row1,
+                      L39_Data.Frame_Row1,
+                      L40_Data.Frame_Row1,
+                      L41_Data.Frame_Row1,
+                      L42_Data.Frame_Row1,
+                      L43_Data.Frame_Row1,
+                      L44_Data.Frame_Row1,
+                      L45_Data.Frame_Row1,
+                      L46_Data.Frame_Row1,
+                      L47_Data.Frame_Row1,
+                      L48_Data.Frame_Row1,
+                      L49_Data.Frame_Row1,
+                      L50_Data.Frame_Row1,
+                      L51_Data.Frame_Row1,
+                      L52_Data.Frame_Row1,
+                      L53_Data.Frame_Row1,
+                      L54_Data.Frame_Row1,
+                      L55_Data.Frame_Row1,
+                      L56_Data.Frame_Row1,
+                      L57_Data.Frame_Row1,
+                      L58_Data.Frame_Row1,
+                      L59_Data.Frame_Row1,
+                      L60_Data.Frame_Row1,
+                      L61_Data.Frame_Row1,
+                      L62_Data.Frame_Row1,
+                      L63_Data.Frame_Row1,
+                      L64_Data.Frame_Row1,
+                      L65_Data.Frame_Row1,
+                      L66_Data.Frame_Row1,
+                      L67_Data.Frame_Row1,
+                      L68_Data.Frame_Row1,
+                      L69_Data.Frame_Row1,
+                      L70_Data.Frame_Row1,
+                      L71_Data.Frame_Row1,
+                      L72_Data.Frame_Row1,
+                      L73_Data.Frame_Row1,
+                      L74_Data.Frame_Row1,
+                      L75_Data.Frame_Row1,
+                      L76_Data.Frame_Row1,
+                      L77_Data.Frame_Row1,
+                      L78_Data.Frame_Row1,
+                      L79_Data.Frame_Row1,
+                      L80_Data.Frame_Row1,
+                      L81_Data.Frame_Row1,
+                      L82_Data.Frame_Row1,
+                      L83_Data.Frame_Row1,
+                      L84_Data.Frame_Row1,
+                      L85_Data.Frame_Row1,
+                      L86_Data.Frame_Row1,
+                      L87_Data.Frame_Row1,
+                      L88_Data.Frame_Row1,
+                      L89_Data.Frame_Row1,
+                      L90_Data.Frame_Row1,
+                      L91_Data.Frame_Row1,
+                      L92_Data.Frame_Row1,
+                      L93_Data.Frame_Row1,
+                      L94_Data.Frame_Row1,
+                      L95_Data.Frame_Row1,
+                      L96_Data.Frame_Row1,
+                      L97_Data.Frame_Row1,
+                      L98_Data.Frame_Row1,
+                      L99_Data.Frame_Row1,
+                      L100_Data.Frame_Row1,
+                      L101_Data.Frame_Row1,
+                      L102_Data.Frame_Row1,
+                      L103_Data.Frame_Row1,
+                      L104_Data.Frame_Row1,
+                      L105_Data.Frame_Row1,
+                      L106_Data.Frame_Row1,
+                      L107_Data.Frame_Row1,
+                      L108_Data.Frame_Row1,
+                      L109_Data.Frame_Row1,
+                      L110_Data.Frame_Row1,
+                      L111_Data.Frame_Row1,
+                      L112_Data.Frame_Row1,
+                      L113_Data.Frame_Row1,
+                      L114_Data.Frame_Row1,
+                      L115_Data.Frame_Row1,
+                      L116_Data.Frame_Row1,
+                      L117_Data.Frame_Row1,
+                      L118_Data.Frame_Row1,
+                      L119_Data.Frame_Row1,
+                      L120_Data.Frame_Row1,
+                      L121_Data.Frame_Row1,
+                      L122_Data.Frame_Row1,
+                      L123_Data.Frame_Row1,
+                      L124_Data.Frame_Row1,
+                      L125_Data.Frame_Row1,
+                      L126_Data.Frame_Row1,
+                      L127_Data.Frame_Row1,
+                      L128_Data.Frame_Row1,
+                      L129_Data.Frame_Row1,
+                      L130_Data.Frame_Row1,
+                      L131_Data.Frame_Row1,
+                      L132_Data.Frame_Row1,
+                      L133_Data.Frame_Row1,
+                      L134_Data.Frame_Row1,
+                      L135_Data.Frame_Row1,
+                      L136_Data.Frame_Row1,
+                      L137_Data.Frame_Row1,
+                      L138_Data.Frame_Row1,
+                      L139_Data.Frame_Row1,
+                      L140_Data.Frame_Row1,
+                      L141_Data.Frame_Row1,
+                      L142_Data.Frame_Row1,
+                      L143_Data.Frame_Row1,
+                      L144_Data.Frame_Row1,
+                      L145_Data.Frame_Row1,
+                      L146_Data.Frame_Row1,
+                      L147_Data.Frame_Row1,
+                      L148_Data.Frame_Row1,
+                      L149_Data.Frame_Row1,
+                      L150_Data.Frame_Row1,
+                      L151_Data.Frame_Row1,
+                      L152_Data.Frame_Row1,
+                      L153_Data.Frame_Row1,
+                      L154_Data.Frame_Row1,
+                      L155_Data.Frame_Row1,
+                      L156_Data.Frame_Row1,
+                      L157_Data.Frame_Row1,
+                      L158_Data.Frame_Row1,
+                      L159_Data.Frame_Row1,
+                      L160_Data.Frame_Row1,
+                      L161_Data.Frame_Row1,
+                      L162_Data.Frame_Row1,
+                      L163_Data.Frame_Row1,
+                      L164_Data.Frame_Row1,
+                      L165_Data.Frame_Row1,
+                      L166_Data.Frame_Row1,
+                      L167_Data.Frame_Row1,
+                      L168_Data.Frame_Row1,
+                      L169_Data.Frame_Row1,
+                      L170_Data.Frame_Row1,
+                      L171_Data.Frame_Row1,
+                      L172_Data.Frame_Row1,
+                      L173_Data.Frame_Row1,
+                      L174_Data.Frame_Row1,
+                      L175_Data.Frame_Row1,
+                      L176_Data.Frame_Row1,
+                      L177_Data.Frame_Row1,
+                      L178_Data.Frame_Row1,
+                      L179_Data.Frame_Row1,
+                      L180_Data.Frame_Row1,
+                      L181_Data.Frame_Row1,
+                      L182_Data.Frame_Row1,
+                      L183_Data.Frame_Row1,
+                      L184_Data.Frame_Row1,
+                      L185_Data.Frame_Row1,
+                      L186_Data.Frame_Row1,
+                      L187_Data.Frame_Row1,
+                      L188_Data.Frame_Row1,
+                      L189_Data.Frame_Row1,
+                      L190_Data.Frame_Row1,
+                      L191_Data.Frame_Row1,
+                      L192_Data.Frame_Row1,
+                      L193_Data.Frame_Row1,
+                      L194_Data.Frame_Row1,
+                      L195_Data.Frame_Row1,
+                      L196_Data.Frame_Row1,
+                      L197_Data.Frame_Row1,
+                      L198_Data.Frame_Row1,
+                      L199_Data.Frame_Row1,
+                      L200_Data.Frame_Row1,
+                      L201_Data.Frame_Row1,
+                      L202_Data.Frame_Row1,
+                      L203_Data.Frame_Row1,
+                      L204_Data.Frame_Row1,
+                      L205_Data.Frame_Row1,
+                      L206_Data.Frame_Row1,
+                      L207_Data.Frame_Row1,
+                      L208_Data.Frame_Row1,
+                      L209_Data.Frame_Row1,
+                      L210_Data.Frame_Row1,
+                      L211_Data.Frame_Row1,
+                      L212_Data.Frame_Row1,
+                      L213_Data.Frame_Row1,
+                      L214_Data.Frame_Row1,
+                      L215_Data.Frame_Row1,
+                      L216_Data.Frame_Row1,
+                      L217_Data.Frame_Row1,
+                      L218_Data.Frame_Row1,
+                      L219_Data.Frame_Row1,
+                      L220_Data.Frame_Row1,
+                      L221_Data.Frame_Row1,
+                      L222_Data.Frame_Row1,
+                      L223_Data.Frame_Row1,
+                      L224_Data.Frame_Row1,
+                      L225_Data.Frame_Row1,
+                      L226_Data.Frame_Row1,
+                      L227_Data.Frame_Row1,
+                      L228_Data.Frame_Row1,
+                      L229_Data.Frame_Row1,
+                      L230_Data.Frame_Row1,
+                      L231_Data.Frame_Row1,
+                      L232_Data.Frame_Row1,
+                      L233_Data.Frame_Row1,
+                      L234_Data.Frame_Row1,
+                      L235_Data.Frame_Row1,
+                      L236_Data.Frame_Row1,
+                      L237_Data.Frame_Row1,
+                      L238_Data.Frame_Row1,
+                      L239_Data.Frame_Row1,
+                      L240_Data.Frame_Row1,
+                      L241_Data.Frame_Row1,
+                      L242_Data.Frame_Row1,
+                      L243_Data.Frame_Row1,
+                      L244_Data.Frame_Row1,
+                      L245_Data.Frame_Row1,
+                      L246_Data.Frame_Row1,
+                      L247_Data.Frame_Row1,
+                      L248_Data.Frame_Row1,
+                      L249_Data.Frame_Row1,
+                      L250_Data.Frame_Row1,
+                      L251_Data.Frame_Row1,
+                      L252_Data.Frame_Row1,
+                      L253_Data.Frame_Row1,
+                      L254_Data.Frame_Row1,
+                      L255_Data.Frame_Row1,
+                      L256_Data.Frame_Row1,
+                      L257_Data.Frame_Row1,
+                      L258_Data.Frame_Row1,
+                      L259_Data.Frame_Row1,
+                      L260_Data.Frame_Row1,
+                      L261_Data.Frame_Row1,
+                      L262_Data.Frame_Row1,
+                      L263_Data.Frame_Row1,
+                      L264_Data.Frame_Row1,
+                      L265_Data.Frame_Row1,
+                      L266_Data.Frame_Row1,
+                      L267_Data.Frame_Row1)}
+
